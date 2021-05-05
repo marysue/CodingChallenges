@@ -1,0 +1,24 @@
+This project is deployed on Vercel, and has a public repo on my github.
+Look for TruMedia project in the appAcademy directory for the final version
+submitted to TruMedia.
+
+TruMedia Networks Project
+• This project is intended to explore prototyping and front end development in a sports analytics context.
+• The project is open ended and intended to be a four to eight hour project. We're looking for a prototype, not production code, but we are looking for you to impress us.
+Description
+• The goal of the project is to create an interactive tool that helps the user understand an MLB batter's or an NFL quarterback's performance over time.
+• Use the following API to retrieve game by game data for either 3 MLB batters, or 3 NFL quarterbacks. https://project.trumedianetworks.com/docs/static/index.html#/
+• You’ll need to use your apiKey to generate a tempToken for the player data endpoints. Your apiKey will be provided separately.
+• Please choose either the MLB or the NFL data set to work with, we're not looking for you to do both.
+• For the MLB data set, we're interested in seeing two derived rate stats (AVG and OPS) displayed over time for each batter. We are also interested in seeing some of the counting stats (many of which are used to calculate the rate stats) displayed in the UI as well. In the JSON data, we provide: PA, AB, H, HR, BB, K, HBP, SF, TB, and RBI.
+• For the NFL data set, we're interested in seeing two derived rate stats (Yd/Att and Cmp%) displayed over time for each quarterback. We are also interested in seeing some of the counting stats (some of which are used to calculate the rate stats) displayed in the UI as well. In the JSON data, we provide: Att, Cmp, Sack, Int, PsYds, PsTD, Rush, RshYds, and RshTD.
+• You do not need to create a comparison UI, it's sufficient for this project to display the data for each batter or each quarterback one at a time on separate pages.
+
+Output
+You can choose to host the project yourself, or send us the files and we’ll host it.
+Self Hosted:
+• You’re welcome to host your project yourself however you like (Heroku, static webpage, etc). If you do this, just send us the url to your project.
+TruMedia Hosted:
+• We're looking to receive a zipped folder of static web files that we can host and access on a static web server. Inside the folder, please provide an index.html file as the launch point for the project. Please note that your project will not be hosted at the root path of the web server, please make all paths relative.
+• For either hosting choice, please send the source code for your project for review. Github or similar repositories are preferred, but other options are acceptable as well.
+• We will review the source code as well as discuss the decisions you made on how to present the data during the technical interview.

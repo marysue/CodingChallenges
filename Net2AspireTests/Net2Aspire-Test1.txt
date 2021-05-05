@@ -1,0 +1,8 @@
+Threads allow a developer to _________.
+
+have tasks be completed in the correct order.
+deploy only certain modules of an application
+reduce the resources needed for an application
+--> I chose:  perform tasks in parallel
+build a less complex application
+

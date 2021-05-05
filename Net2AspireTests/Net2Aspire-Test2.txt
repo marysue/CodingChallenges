@@ -1,0 +1,8 @@
+
+In MVC, the Model refers to ________ and the View refers to _________?
+
+Business-logic layer; Domain object layer;
+Business-logic layer; Data-access layer;
+--> I chose:  Data-access layer; Presentation layer;
+Presentation layer; Domain object layer;
+Presentation layer; Interface layer
