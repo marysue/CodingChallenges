@@ -1,0 +1,52 @@
+<html><head><title>BetterHelp Challenge</title>
+<script   src="https://code.jquery.com/jquery-2.2.2.min.js"   integrity="sha256-36cp2Co+/62rEAAYHLmRCPIych47CvdM+uTBJwSzWjI="   crossorigin="anonymous"></script>
+</head>
+<body>
+<h1>BetterHelp Challenge</h1>
+
+<h2>Step 1: Database</h2>
+<p>Political season is upon us. For this challenge, pretend that you are working for your candidate of choice, trying to help them determine which voters to spend the most time on fundraising.</p>
+<p>Given the tables below, write a SQL query that returns: <ul><li>Name<li>Date of most recent donation (if any)<li>Political Party guess as: R, D, or U, where: <ul><li>R = Likely Republican (more republican donations than other donations)<li>D = Likely Democrat (more democrat donations than other donations)<li>U = Undtermined (no donations on record, or R and D are tied for first place.</ul>
+<li>Address</li>
+</ul>
+</p>
+<p>Tables:
+<ul><li>People<ul>
+<li>ID
+<li>Name
+<li>Address
+</ul>
+<li>Donations<ul>
+<li>ID
+<li>People_ID
+<li>Donation_Date
+<li>Party (1 = Republican, -1 = Democrat)
+</ul></ul></p>
+<p><h3>Enter your SQL query below:</h3>
+<form action="post">
+<textarea class='sql' name='sql_submission' rows=10 cols=120></textarea>
+<br>
+<h2>Step 2: Javascript</h2>
+<p>For some reason, this form is submitted via AJAX, but there are a couple of bugs preventing that from working. Use your browser's console to fix it.</p>
+<button type="button" >Submit</button>
+</form>
+</p>
+
+
+<h3>Results:</h3>
+<div id='results'>
+</div>
+<script>
+var success_callback = function(data) {
+    console.log(data);
+    $('#results')[0].innerHTML = data;
+}
+$('button').click(function(){
+    alert("Detected click!");
+    // $.ajax('ajax.php', {
+    //                     data: {submission: JSON.stringify({prop: $('text_area').val()})},
+    //                     success: success_callback
+    //                    }
+    // );
+});
+</script>
