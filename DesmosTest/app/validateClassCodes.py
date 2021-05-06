@@ -25,13 +25,10 @@ def validateClassCodes(code, distracting_words, existing_codes):
 
 def containsDistractingWords(code, distracting_words):
     if foundWordInOrder(code, distracting_words) :
-        print("foundWordInOrder returned true!")
         return True
     elif foundAllLettersInCode(code, distracting_words):
-        print("foundAllLettersInCode returned true!")
         return True
     else :
-        print("Code is good!")
         return False
 
 
@@ -40,7 +37,6 @@ def foundWordInOrder(code, distracting_words):
     # in consecutive order (RATS42)
     for distracting_word in distracting_words:
         if distracting_word.lower() in code:
-            print("found entire word in code: ", code)
             return True
         else :
             return False
@@ -53,17 +49,14 @@ def foundAllLettersInCode(code, distracting_words) :
     #for each distracting word
     for distracting_word in distracting_words:
         distracting_word = distracting_word.lower()
-        print(f'Is {code} in this distracting word: {distracting_word}')
         #look at every code character and see if it is in distracting word
         for char in code :
             idx = distracting_word.find(char)
             if (idx >= 0):
                # distracting_word = distracting_word.slice(0, idx) + distracting_word.slice(idx + 1);
                 distracting_word = distracting_word[:idx] + distracting_word[idx + 1:]
-                print('     Found letter {char}, removing from distracting_word: {distracting_word}');
 
             if len(distracting_word) == 0:
-                print("     foundAllLettersInCode:  ", len(distracting_word));
                 return True
 
     #if we made it here, all of the letters of any distracting word is not in the code
