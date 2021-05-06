@@ -106,7 +106,12 @@ Input/Output
 
         Expected output: [-3]
 
-        
+Test 3:
+=======
+    Input:
+        balances: [0]
+        requests: ["deposit 1613327630 1 150"]
+    Expected Output: [150]
 */
 
 function bankRequestsDailyCashback(balances, requests) {
