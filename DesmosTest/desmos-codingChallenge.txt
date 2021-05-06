@@ -1,0 +1,26 @@
+Students join Desmos classroom activities using class codes. Teenagers have a keen sense for anything inappropriate, so we don’t want to ruin a teacher’s day by generating codes that contain distracting words. For example, if RATS is a distracting word, we don’t want to generate the codes RATS42, RA1TSF or 3RQATS.
+
+
+Your task is to write a function that validates class codes. Use any language or libraries you prefer.
+
+
+Input
+The function should take the following as parameters:
+
+code: a candidate code
+distracting_words: You can use any data structure you prefer. Here’s an example list.
+existing_codes: the codes generated so far. You can use any data structure you prefer.
+Output
+The function should return True or False.
+
+
+It should return True if both of the following conditions are met:
+
+The code does not contain any distracting_words in consecutive (RATS42) or non-consecutive (3RQATS) order.
+The code is not one of existing_codes
+and False otherwise.
+
+
+You should write tests for your function. Tests should have good coverage (they should fail if the implementation is changed to be incorrect), and be orthogonal (they should each test an independent aspect of the code).
+
+
