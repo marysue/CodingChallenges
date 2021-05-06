@@ -75,16 +75,8 @@ Input/Output
     1 <= requests.length <= 100
 
     [output] array.integer
-    The balances after executing all of the requests ort array with a single integer -
-    the index of the first invalid request preceded by -.
-
-[JavaScript] Syntax Tips:
-    //Prints help message to the console
-    //Returns a string
-    function helloWorld(name) {
-        console.log("This prints to the console");
-        return "Hello, " + name;
-    }
+    The balances after executing all of the requests or array with a single integer
+    representing the index of the first invalid request preceded by -.
 
     Test 1:
     ========
@@ -108,7 +100,7 @@ Input/Output
             "withdraw 1613327651 1 50",
             "deposit 1613327655 1 50"]
 
-        Expected output: [-3]
+        Expected output: [-3] //1 based index of the first invalid request.
 
 Test 3:
 =======
@@ -126,9 +118,8 @@ Test 4:
             "withdraw 1613414028 1 2",
             "withdraw 1613414031 2 1"]
 
-            outputs -2 because account 1 would be 2 overdrawn.  Instructions say the program should stop
-            when this condition is hit -- and it looks like it is returning the overdrawn amount.
-    Expected Output: [-2]
+
+    Expected Output: [-2] //one based index of the first invalid request
 
 */
 
