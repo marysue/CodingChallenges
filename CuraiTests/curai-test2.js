@@ -96,7 +96,17 @@ Input/Output
 
   Test 2:
   =======
+    Input:
+        balances: [20, 1000, 500, 40, 90]
+        requests:
+            ["deposit 1613327630 3 400",
+            "withdraw 1613327635 1 20",
+            "withdraw 1613327651 1 50",
+            "deposit 1613327655 1 50"]
 
+        Expected output: [-3]
+
+        
 */
 
 function bankRequestsDailyCashback(balances, requests) {
