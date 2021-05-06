@@ -38,8 +38,12 @@ Your system should also handle invalid requests. There are two types of invalid 
 Example 2:
 ==========
 For balances = [20, 1000, 500, 40, 90] and requests =
-["deposit 1613327630 3 400", "withdraw 1613327635 1 20", "withdraw 1613327651 1 50",
- "deposit 1613327655 1 50"], the output should be:
+    ["deposit 1613327630 3 400",
+    "withdraw 1613327635 1 20",
+    "withdraw 1613327651 1 50",
+    "deposit 1613327655 1 50"],
+
+ the output should be:
  bankRequestsDailyCashback(balances, requests) = [-3].
 
  Explanation:
@@ -112,6 +116,20 @@ Test 3:
         balances: [0]
         requests: ["deposit 1613327630 1 150"]
     Expected Output: [150]
+
+Test 4:
+=======
+    Input:
+        balances: [100, 100000]
+        requests:
+            ["withdraw 1613327630 1 100",
+            "withdraw 1613414028 1 2",
+            "withdraw 1613414031 2 1"]
+
+            outputs -2 because account 1 would be 2 overdrawn.  Instructions say the program should stop
+            when this condition is hit -- and it looks like it is returning the overdrawn amount.
+    Expected Output: [-2]
+
 */
 
 function bankRequestsDailyCashback(balances, requests) {
