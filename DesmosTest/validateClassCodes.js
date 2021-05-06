@@ -1,4 +1,5 @@
-
+// Because I have been working most recently with javascript, I put the code together, and tested it with
+// javascript.  Then I  transformed it into python.
 
 function validateClassCodes(code, distracting_words, existing_codes) {
     code = code.toLowerCase();

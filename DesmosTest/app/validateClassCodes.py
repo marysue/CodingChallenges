@@ -1,18 +1,27 @@
 
 
 def validateClassCodes(code, distracting_words, existing_codes):
-    code = code.lower()
+
+    if len(code) == 0:
+        print("Code must have a value.")
+        return False
+
+    #need to use lower case to make certain distracting word is neither
+    #uppercase or lower case.
+    lowerCode = code.lower()
+
     if code in existing_codes :
         print("Code already has been used.")
         return False
     else:
-        if containsDistractingWords(code, distracting_words):
+        if containsDistractingWords(lowerCode, distracting_words):
             print("Code contains a distracting word:  ", code)
             return False
         else :
             existing_codes.append(code)
             print("Adding code to existing codes: ", existing_codes)
             return True
+
 
 def containsDistractingWords(code, distracting_words):
     if foundWordInOrder(code, distracting_words) :
@@ -24,8 +33,6 @@ def containsDistractingWords(code, distracting_words):
     else :
         print("Code is good!")
         return False
-
-
 
 
 def foundWordInOrder(code, distracting_words):
