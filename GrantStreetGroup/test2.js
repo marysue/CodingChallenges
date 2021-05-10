@@ -26,5 +26,15 @@ Assume that:
     array A is sorted in non-decreasing order.
 
 In your solution, focus on correctness. The performance of your solution will not be
-the focus of the assessment. 
+the focus of the assessment.
 */
+
+function solution(A, K) {
+    var n = A.length;
+    for (var i = 0; i < n -1; i++) {
+        if (A[i] + 1 < A[i + 1])
+            return false;
+        else
+            return true;
+    }
+}
