@@ -63,4 +63,56 @@
     - 0.75
     - 0.5
 
+11. Which of the following is an advantage of representing a binary-search tree with a continguous array (rather than
+    nodes linked via pointers)?
+    - It's more secure (pointer operations create surface area for exploits)
+    - It makes inserts faster (because you can jump to the insert location in constant time)
+    - It allows the tree to be built in linear time (via the heap-down operation)
+    - It's maximally compact, and cache efficiently
 
+12. Which of the following is NOT a benefit of using a static analysis code linter?
+    - property-based testing
+    - unnecessary dependencies(requires, imports, etc.)
+    - misnamed variables
+    - consistent style enforcing
+
+13. Consider a function which processes an input array of items. It has an automated test suite which measures code
+    coverage. However, the function fails when passed an empty array. Which kind of coverage criteria would likely have
+    caught this bug?
+    - branch coverage
+    - function coverage
+    - cyclomatic complexity
+    - line coverage
+
+14. Which of the following is NOT a typical technique used to implement pagination in an API?
+    - specifying a keyset to compare against
+    - specifying a cursor to start after
+    - specifying larger limits on the number returned
+    - specifying an offset
+
+15. What does the following code output?
+    var dict = [character: Int]()
+    for key in "AAABBC" {
+        dict[key, default: 0] += 1
+    }
+    print (dict.keys.min {dict[$0]! < dict[$1]! } ?? "")
+
+16. Which of the following is NOT a space-efficient storage format for a sparse matrix?
+    - dictionary of keys
+    - compressed sparse row
+    - compressed sparse column
+    - 2-dimensional array
+
+17. Which security exploit involves poisoning a cache with corrupt data?
+    - DNS spoofing
+    - Typosquatting
+    - Distributed denial of service
+    - Phishing
+
+18. Which of the following concurrency models are ordered in increasing resource usage, e.g., memory?
+    - coroutines, processes, threads
+    - forks, fibers, native threads
+    - forks, threads, coroutines
+    - green threads, native threads, processes
+
+19. 
