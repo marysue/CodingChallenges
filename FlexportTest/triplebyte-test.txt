@@ -1,0 +1,66 @@
+1.  Which of the following algorithms would be best suited for a tail recursive implementation:
+    - depth first search of a tree
+    - randomized quicksort
+    - binary search of a sorted array
+    - file system traversal
+
+2. Missed
+
+3.  Which programming language feature relies on manipulating the source code's abstract syntax tree?
+    - C preprocessor
+    - templates
+    - string interpolation
+    - macros
+
+4.   Which is NOT a distinguishing feature of a Progressive Web Application on a mobile platform?
+    - The app supports push notifications from a server
+    - The app can access device hardware.
+    - The app works offline.
+    - The app is distributed and installed on the mobile device.
+
+5. What does the following code output?
+    def func(a, b)
+        a += 1
+        b.push(1)
+    end
+    a, b = 0, []
+    func(a, b)
+    print a, b
+
+    -1[1]
+    -0[1]
+    -1[]
+    -0[]
+
+  6.  Which graph algorithm do build tools like "make" use to efficiently determine the order in which to build dependencies?
+    - Iterative deepening depth first search is the fastest way to build a linear ordering of a graph, running in O(n) time.
+    - make finds a minimum spanning tree over dependencies, which minimizes the number of compilations required to build the target.
+    - A topological sort over dependencies will yield a valid build order.
+    - A max-flow algorithm like Ford-Fulkerson will not only determine the build order, but can identify subsets of the graph
+      that can run on multiple threads.
+
+7. Accidentally deleted that one
+
+8. Which of the following is a recommended function for securely storing hashed passwords on an authenticating server?
+   - unsalted
+   - scrypt
+   - SHA-1
+   - MD5
+
+9.  Which HTTP method would efficiently check whether a resource URI exists?
+    - CONNECT
+    - GET
+    - TRACE
+    - hashed
+
+10. What is the output of the following multiple dispatch method call?
+    func(x::Int, y::Int) = x / y
+    func(x::Int, y::Number) = func(x, trunc(Int, y))
+    func(x::Number, y::Number) = func(trunc(Int, x), y)
+    print(func(1.5, 2.0))
+    - 0.0
+    - raises an ambiguous MethodError
+    - 0.75
+    - 0.5
+
+
