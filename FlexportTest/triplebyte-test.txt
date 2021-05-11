@@ -115,4 +115,90 @@
     - forks, threads, coroutines
     - green threads, native threads, processes
 
-19. 
+19. Which SQL command would be used to determine whether a query uses an index?
+    - SHOW
+    - ANALYZE
+    - REINDEX
+    - EXPLAIN
+
+20. Which of the following is NOT a typical reason to use an enumerated type?
+    - ratio of constants
+    - higher readability
+    - compact storage
+    - constraining valid values
+
+21. Which of the following is NOT a common use case for feature toggles (a.k.a. feature flags)?
+    - Integrating a new feature in a continuous delivery environment
+    - Maintaining a new feature branch in source version control
+    - Providing feedback on new features before they are completed
+    - Testing new features on a small subset of users
+
+22. Which of the following compression techniques is lossy?
+    - downsampling
+    - Lempel-Ziv
+    - Huffman coding
+    - run-length encoding
+
+23.  Imagine you're building a massively multi-player Pac Man game. You want hundreds of players to be able to play Pac
+     Man against each other at the same time. You're going to pay prize money to the best players, so it's important that
+     you limit their ability to cheat. How might you best build this?
+     - A server needs to run a canonical copy of the game, with all players. Each client can also run a copy of their
+       region of the game, and use this to interpolate states between server updates. Clients would send their control
+       inputs to the server (perhaps with a timestamp, although that raises cheating issues), and receive updates for
+       all players near them.
+    -  Socket.IO is the way to go. Each client can open a web socket connection to the server, and transmit an event
+       whenever their player moves. These events will be emitted to every other player in the game. That way every client
+       will know where all the other players are, and can detect when they should die and remove themselves from the board.
+    -  None of these designs make sense
+    -  A peer-to-peer architecture makes the most sense (the latency of a client-server version would be a problem). Each
+       player could have a list of peers near them in the game, and send those peers their location every frame. You could
+       have a voting system (like a blockchain) where clients vote to resolve state conflicts and agree on the final version.
+
+24. Which of the following is NOT a true statement regarding public-key cryptography?
+    - It's used to verify X.509 certificates
+    - It's used to exchange a symmetric key in TLS/SSL
+    - It's used to exchange a symmetric key in SSH
+    - It requires a key exchange over a secure channel
+
+25. Which programming language is known for statistical analysis, but not as a general purpose language?
+    - Scala
+    - R
+    - Python
+    - Julia
+
+26. Which is NOT a good use case for a column-oriented database?
+    - online transactional processing (OLTP)
+    - data compression
+    - time series analysis
+    - online analytical processing (OLAP)
+
+27. The following code implements a random sample of items in a single pass. Fill in the missing line of code.
+    def sample(items, n):
+        result = []
+        for i, item in enumerate(items):
+            if i < n:
+                result.append(item)
+            else:
+                j = randint(0, i) #random integer, inclusive
+                if j < n:
+                    #Fill in the missing line However
+        return result
+
+        - del result[j]
+        - result[j] = item
+        - result[i] = item
+        - result.append(item)
+
+28. Which of the following could a doubly linked list efficiently implement?
+    - a priority queue
+    - a search tree
+    - a stack and a queue
+    - an associative array
+
+29. Which HTTP request header is used to identify the URI of the resource from which a request URI was obtained?
+    - Location
+    - From
+    - Referer
+    - Host
+
+30. 
