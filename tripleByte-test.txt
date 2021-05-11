@@ -15,4 +15,40 @@ NOTE:  I didn't record the first 9 questions.
      - Post-order traversal
      - I don't know
 
-12.
+12. Which of the following is NOT one of the claimed benefits of a microservice architecture?
+    - Improved modularity
+    - Lower network latency
+    - Continuous delivery or deployment
+    - Resiliency against failures
+
+13. Do two system threads in the same process share the same call stack and heap space?
+    - they have different call stacks and access different heap spaces
+    - they both share a single call stack and access the same heap sapce
+    - they share a single call stack, but access different heap spaces
+    - they have different call stacks, but access the same heap space
+
+14. What is a sticky session?
+    - A sticky session is a load balancing technique where each client is consistently mapped to a specific server.
+      This allows the servers to store state locally.
+    - A sticky session is a particularly expensive HTTP request. Identifying sticky sessions is key to optimizing
+      a web backend.
+    - A sticky session is a long running HTTP connection. The client can hold this connection open, and thus reduce
+      the time it takes to make a request.
+    - A sticky session is a user session where session data is stored directly in a cookie (rather than storing just an ID).
+      This allows faster processing on the server side.
+
+15. What does the following code do?
+    def _(func, items):
+        i = 0
+        for item in items:
+            if func(item):
+                items[i] = item
+                i += 1
+        del items[i:]
+
+    - Return sorted items
+    - Partition the items around a pivot value
+    - Filter a sequence in-place for items which satisfy a predicate
+    - Remove items which satisfy a predicate
+
+
