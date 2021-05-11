@@ -1,0 +1,18 @@
+NOTE:  I didn't record the first 9 questions.
+
+
+10.  Which feature emphasized in functional programming languages is beneficial in concurrent computations?
+    - transactions
+    - immutable data structures
+    - dynamic dispatch
+    - recursion
+    - i don't know
+
+11.  Which algorithm can be used to obtain the elements in a binary search tree in sorted order?
+     - All of the above (actually, below)
+     - In-order traversal
+     - Pre-order traversal
+     - Post-order traversal
+     - I don't know
+
+12.

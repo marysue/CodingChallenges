@@ -201,4 +201,93 @@
     - Referer
     - Host
 
-30. 
+30. Which of the following practices is NOT associated with continuous integration?
+    - scripted deployment to production
+    - permanent branches
+    - automated testing of all builds
+    - automated builds of all commits
+
+31. What would the following code print out?
+    #include <stdio.h>
+    #include <unistd.h>
+
+    int count = 0;
+
+    int main(void) {
+            fork();
+            printf("%d", count++);
+            return 0;
+    }
+
+    - 00
+    - 0
+    - 1
+    - 01
+
+32. Which media type is commonly used in a POST request and also used to format a GET query string?
+    - text/plain
+    - application/x-www-form-urlencoded
+    - application/json
+    - text/html
+
+33. Which of the following is NOT a common control flow statement used in loops?
+    - return
+    - continue
+    - finally
+    - break
+
+34. Which of the following code snippets would sort complex numbers in a guaranteed consistent
+    (but perhaps arbitrary) order?
+    - sort_by
+    - sort_by { |c| c.real + c.imag}
+    - sort_by { |c| [c.real, c.imag] }
+    - sort_by { |c| c.real }
+
+35. Which of the following numbers would end up being the largest as n increases indefinitely? (googol is an extremely large number:
+    1 googol = 1.0 * 10^100)
+    - n!
+    - e^n
+    - n^googol
+    - google * n * log n
+
+36. In reviewing a diff, which property would MOST indicate that a test-driven development process had been followed?
+    - All tests pass.
+    - The code branch coverage did not decrease.
+    - The new tests fail when run on the existing implementation.
+    - The code statement coverage did not decrease.
+
+37. Which of the following containers would best suited for storing a mutable data structure as an entry?
+    - an unsorted array
+    - a sorted array
+    - a hash set
+    - a search tree
+
+38. Which of the following obserevations would indicate that a group of tasks are being executed concurrently
+    but not in parallel?
+    - A global lock is used to execute the tasks sequentially
+    - Multiple threads are making network requests
+    - Only one processor core is in use
+    - Multiple processes are writing out to disk
+
+39. How do long-polling and WebSocket compare?
+    - Long-polling only allows transmission of short JSON or SML objects (it arose as an extension of AJAX).
+      WebSocket extends it to allow longer messages and different content types.
+    - Both allow two-way communication between clients and servers. Long-polling is an ugly hack on top of HTTP.
+      WebSocvket provides a specific protocol to achieve this behavior.
+    - WebSocket is more secure. The protocol is more obscure, and packet sniffers are less likely to intercept and record your data.
+    - Long-polling is simpler and more straightforward. However, the caching behavior of many networks (corporate firewalls in
+      particular) necessitates WebSocket.
+
+40. Assuming a tree data structure with child nodes, what does the following code do?
+    def func(tree):
+        nodes = [tree]
+        for node in nodes:
+            yield node
+            nodes += node.children
+
+    - a binary search of the tree
+    - a breadth-first traversal of the tree
+    - a shallow copy of the tree
+    - a depth-first traversal of the tree
+
+
