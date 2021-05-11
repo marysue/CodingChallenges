@@ -51,4 +51,114 @@ NOTE:  I didn't record the first 9 questions.
     - Filter a sequence in-place for items which satisfy a predicate
     - Remove items which satisfy a predicate
 
+16.  What's one advantage that a dynamic array has over a linked list?
+    - The binary search algorithm can run over a (sorted) array list, but can't run over a linked list.
+    - An array list allows fast (constant time) inserts, while a linked list takes linear time.
+    - A linked list is actually superior to an array list, but it's harder to implement correctly.
+      In most cases, a dynamic array is sufficient.
+    - Dynamic arrays work better in concurrent environments. Rather than locking every node, you only needs
+      to lock the single list.
 
+17. All of the below programming languages are primarily run on the Java virtual machine, except which one?
+    - Clojure
+    - Scala
+    - Kotlin
+    - JavaScript
+
+18. Suppose you have the following code which iterates over a large (2000 by 2000) square 2D
+    array and counts the number of non-zero elements in the array.
+
+    You swap the order of two inner loops, so that the x loop is now inside the y loop. This
+    drastically improved the performance of your code. Why?
+
+    int total = 0;
+    for (int x = 0; x < side_length; x++) {
+        for (int y = 0; y < side_length; y++) {
+            if (array[y][x] != 0) {
+                total += 1;
+            }
+        }
+    }
+
+    - Ite reduces the cost of each branch misprediction
+    - It forces the compiler to use a larger instruction set
+    - It reduces the number of cache misses
+    - The compiler is less able to optimize that loop
+
+19. Which of the following is a common technique for ranking documents in a search engine, on
+    the basis of query term relevance?
+    - term frequency * inverse document frequency
+    - stop words
+    - stemming
+    - document frequency
+
+20. Select the line of code that completes the function:
+    #function recursively reverses a string
+    def recursive_string_reverse(string)
+        if string.length <= 1
+            return string
+        end
+
+        first_char = string[0]
+        last_chars = string(1..string.length]
+        #MISSING LINE
+    end
+
+    - return last_chars + first_char
+    - return recursive_string_reverse(last_chars).concat(first_char)
+    - return recursive_string_reverse(last_chars)
+    - return first_char.concat(recursive_string_reverse(last_chars))
+
+21. Given a set of words, the task is to find anagrams (words with exactly the same letters).
+    Which approach would be most efficient?
+    - Compare each pair of words as a multiset
+    - Use a regular expression to search for each word
+    - Use a multimap in which the keys are sorted letters
+    - Index the words by each letter
+
+22. All of the following concerns tend to be implemented with global state, because they crosscut
+    the business logic of an application, except which one?
+    - caching
+    - searialization
+    - metrics
+    - logging
+
+23. What's wrong with this code?
+    // allocate and return a 2D array
+    // (array of arrays)
+    int ** allocate2DArray(int width, int height) {
+        int **array = malloc(sizeof(int *) * width);
+        array[1] = malloc(sizeof(int) * height);
+        return array;
+    }
+
+    - The two calls to malloc should be combined. It is redundant
+    - The width and height parameters are backwards. Height should come first.
+    - This only allocates a single column. All the columns need to be allocated in a loop
+    - This looks like the right way to allocate a 2D array in c
+
+24. What technique would dramatically improve the performance of the following function?
+    fun fib(n: Long) : Long {
+        return if (n < = 1) n else fib(n - 1) + fib(n - 2)
+    }
+
+    - memoization
+    - bytecode compilation
+    - recursion
+    - divide and conquer algorithm
+
+25. All of the following are typical use cases for a heap data structure, except which one?
+    - Sorting in-place
+    - Implementing a priority queue
+    - Implementing a binary search
+    - Merging multiple sorted lists into a single sorted list
+
+26. Missed
+
+27.  Consider a git repository with local changes. Which of the following would NOT succeed in
+     fetching remote changes to the same files?
+
+    - git checkout -- .; git pull
+    - git stash; git pull
+    - git commit -a ...; git pull
+    - git pull
