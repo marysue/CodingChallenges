@@ -147,6 +147,22 @@ NOTE:  I didn't record the first 9 questions.
     - recursion
     - divide and conquer algorithm
 
+24.  [Yes, another 24 ... must have been a different test?]
+    Which of the following is NOT a feature of HTTP/2?
+    - compression of headers
+    - Server Push
+    - multiplexing
+    - pipelining
+
+    DEFINITION:  HTTP pipelining is a technique in which multiple HTTP requests are sent on a single TCP (transmission control
+    protocol) connection without waiting for the corresponding responses.
+
+    The technique was superseded by multiplexing via HTTP/2, which is supported by most modern browsers.
+
+    As of 2018, HTTP pipelining is not enabled by default in modern browsers, due to several issues including buggy
+    proxy servers and HOL blocking.
+
+    
 25. All of the following are typical use cases for a heap data structure, except which one?
     - Sorting in-place
     - Implementing a priority queue
@@ -162,3 +178,71 @@ NOTE:  I didn't record the first 9 questions.
     - git stash; git pull
     - git commit -a ...; git pull
     - git pull
+
+28.  Which of the ofllowing is NOT a common load balancing strategy?
+    - round-robin
+    - random choice
+    - exponential backoff
+    - least connections
+
+
+29.  In SQL, what distinguishes a HAVING clause from a WHERE clause?
+    - HAVING cannot be used to filter rows.
+    - HAVING can be used with window functions.
+    - HAVING can specify an aggregate value in a GROUP BY query.
+    - HAVING can be used in an UPDATE statement
+
+    DEFINITION:  HAVING clause is used to filter the records from the groups based on the
+    given condition in the HAVING Clause. Those groups who will satisfy the given condition will
+    appear in the final result. HAVING Clause can only be used with the SELECT statement.
+
+
+31.  The below function selects n-tuples values from a list of values. Which combinatoric operation
+    describes what it does:
+
+    func([1, 2, 3, 4], 2) => [(1, 2), (1, 3), (1, 4), (2, 3), (2, 4), (3, 4)]
+
+    - combinations with repetition
+    - permutations with repetition
+    - permutations
+    - combinations
+
+    Definitions:  Permutations and combinations, the various ways in which objects from a set may be selected,
+    generally without replacement, to form subsets ... This selection of subsets is called a permutation when the
+    order of selection is a factor, a combination when order is NOT a factor.
+
+32.  Suppose you work for a search engine company, and you would like to figure out the top 50 terms most
+     frequently queried yesterday. You have query logs in plain text that are stored on thousands of computers.
+     Which of the following approaches sounds most reasonable to do this?
+     - Search engines store all the terms user queries in an inverted index. You can directly extract the information
+       from the index itself.
+    - Relational database is the best choice for finding top N results. You could write a small application to process
+      query logs, write the counter of each term into a relational database, and then use a simple SQL query to find the result.
+    - Redis is super fast and has build-in support for incrementing counters. You could write a small application to process the query
+      logs, increment the counter of each term in a Redis instance, and then use a special Redis command to find the top 50 values.
+    - This is a good use case for MapReduce. You could write a mapper to process the logs and a reducer to aggregate the results.
+
+    DEFINITION:  MapReduce is a programming model and an associated implementation for processing and generating big data sets
+    with a parallel, distributed algorithm on a cluster.
+
+    A MapReduce program is composed of a map procedure, which performs filtering and sorting (such as sorting students by first name
+    into queue, one queue for each name), and a reduce method, which performs a summary operation (such as counting the number of
+    students in eqch queue, yielding name frequencies). The "MapReduce System" (also called "infrastructure" or "framework") orchestrates
+    the processing by marshalling the distributed servers, running the various tasks in parallel, managing all communications
+    and data transfers between the various parts of the system, and providing for redundancy and fault tolerance.
+
+33.  Why do programs with bad memory leaks often slow down before they crash?
+    - The L1 cache runs out of space first, and the CPU has to access main memory more often
+    - As the system runs out of memory, swapping increases and swapping is slow
+    - As the system runs out of memory, fragmentation increases, and memory access times go up.
+    - Memory leaks cause buffer overflows, which reduces memory bandwidth available to the CPU.
+
+
+34.  Which of the following is not an accurate description of blockchain?
+    - Cryptographic hashes are to prevent tampering with the data
+    - It is commonly used to implement cryptocurrencies
+    - It is an open, distributed ledger
+    - New transactions are signed by a trusted third-party
+
+    Blockchain definition:  A system in which a record of transactions made in bitcoin or another
+    cryptocurrency are maintained across several computers that are linked in a peer-to-peer network.
