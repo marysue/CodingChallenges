@@ -53,9 +53,11 @@ def foundAllLettersInCode(code, distracting_words) :
         for char in code :
             idx = distracting_word.find(char)
             if (idx >= 0):
-               # distracting_word = distracting_word.slice(0, idx) + distracting_word.slice(idx + 1);
+               # remove the matched char from distracting word
                 distracting_word = distracting_word[:idx] + distracting_word[idx + 1:]
 
+            #If we've removed all of the letters of the distracting word, then code
+            #has the distracting word letters in various order.
             if len(distracting_word) == 0:
                 return True
 
