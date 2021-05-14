@@ -8,21 +8,24 @@ Given the tables below, write a SQL query that returns:
 Name
 Date of most recent donation (if any)
 Political Party guess as: R, D, or U, where:
-R = Likely Republican (more republican donations than other donations)
-D = Likely Democrat (more democrat donations than other donations)
-U = Undtermined (no donations on record, or R and D are tied for first place.
+    R = Likely Republican (more republican donations than other donations)
+    D = Likely Democrat (more democrat donations than other donations)
+    U = Undtermined (no donations on record, or R and D are tied for first place.
 Address
+
 Tables:
 
-People
-    ID
-    Name
-    Address
-Donations
-    ID
-    People_ID
-    Donation_Date
-    Party (1 = Republican, -1 = Democrat)
+    People
+        ID
+        Name
+        Address
+    Donations
+        ID
+        People_ID
+        Donation_Date
+        Party (1 = Republican, -1 = Democrat)
+
+
 Enter your SQL query below:
 
 Step 2: Javascript
@@ -31,6 +34,8 @@ For some reason, this form is submitted via AJAX, but there are a couple of bugs
 Submit
 Results:
 
+
+=================
 Here's my SQL:
 
 CREATE FUNCTION PartyAffiliation(in pid int)
@@ -79,11 +84,7 @@ error: function(request, error) { alert("Request: " + JSON.stringify(request) } 
 
 However, something in intercepting the onclick method and I don't seem to get beyond the interception.
 
-Answers
-Are you able to work in the US without any visa sponsorship for the next 5 years?
-Yes
-
-
+========================================================================
 Please go to http://212.47.247.139/challenge/ and follow the instructions
 CREATE FUNCTION PartyAffiliation(in pid int)
      RETURNS VARCHAR(50)
