@@ -34,14 +34,14 @@ Results:
 Here's my SQL:
 
 CREATE FUNCTION PartyAffiliation(in pid int)
-RETURNS varchar(50)
+RETURNS VARCHAR(50)
 language plpgsql
 as
 $$
 declare
 dCount integer;
 rCount integer;
-party varchar(50);
+party VARCHAR(50);
 BEGIN
 SELECT count(*) INTO rCount from donations where donations.people_id = pid AND donations.party = 1;
 SELECT count(*) INTO dCount from donations where donations.people_id = pid AND donations.party = -1;
@@ -86,36 +86,91 @@ Yes
 
 Please go to http://212.47.247.139/challenge/ and follow the instructions
 CREATE FUNCTION PartyAffiliation(in pid int)
-RETURNS varchar(50)
-language plpgsql
-as
-$$
-declare
-dCount integer;
-rCount integer;
-party varchar(50);
-BEGIN
-SELECT count(*) INTO rCount from donations where donations.people_id = pid AND donations.party = 1;
-SELECT count(*) INTO dCount from donations where donations.people_id = pid AND donations.party = -1;
-if rCount > dCount then
-return 'R';
-elsif rCount < dCount then
-return 'D';
-else
-return 'U';
-end if;
+     RETURNS VARCHAR(50)
+     language plpgsql
+     as
+       $$
+     declare
+        dCount integer;
+        rCount integer;
+        party VARCHAR(50);
+    BEGIN
+       SELECT count(*) INTO rCount from donations
+       WHERE donations.people_id = pid AND donations.party = 1;
+       SELECT count(*) INTO dCount from donations
+       WHERE donations.people_id = pid AND donations.party = -1;
+       if rCount > dCount then
+            return 'R';
+       elsif rCount < dCount then
+            return 'D';
+       else
+            return 'U';
+       end if;
 
-END;
+    END;
 $$
 
-SELECT people.name AS "Name", max(donations.donation_date) AS "Most Recent Donation", PartyAffiliation(people.id) AS "Political Party Guess", people.address AS "Address"
+SELECT people.name AS "Name",
+      MAX(donations.donation_date) AS "Most Recent Donation",
+      PartyAffiliation(people.people_id) AS "Political Party Guess",
+      people.address AS "Address"
 FROM donations
 JOIN people
-ON people.id = donations.people_id
+      ON people.people_id = donations.people_id
 GROUP BY
-people.id, people.name, people.address
+      people._people_id, people.name, people.address
 ORDER BY
-people.id;
+      people.people_id;
+
+Query Result:
+Name    Most Recent Donation    Political Party Guess   Address
+======= ====================    =====================   ==============
+Person1 1980-01-01              U                       123 Main St.
+Person2 1980-01-01              U                       456 Main St.
+Person3 1980-01-01              R                       789 Main St.
+Person4 1980-01-01              D                       1011 Main St.
+Person5 1980-01-01              D                       1213 Main St.
+Person6 1980-01-01              D                       1415 Main St.
+
+      =========================SQL DB SETUP FOR ABOVE============================
+      1.  Use the "people" database in PostBird - already setup.
+      2.  Create two tables:
+            CREATE TABLE people(
+                people_id GENERATED ALWAYS AS IDENTITY,
+                name VARCHAR(50) NOT NULL,
+                address VARCHAR(50) NOT NULL,
+                PRIMARY KEY(people_id)
+            );
+            CREATE TABLE donations(
+                donationId GENERATED ALWAYS AS IDENTITY,
+                people_id INTEGER NOT NULL,
+                donation_date DATE NOT NULL,
+                party INTEGER NOT NULL,
+                PRIMARY KEY(donationId)
+                CONSTRAINT fk_people_id
+                    FOREIGN KEY(people_id)
+                        REFERENCES people(people_id)
+            );
+            INSERT INTO people(name, address)
+            VALUES
+            ('Person1', '123 Main St.'),
+            ('Person2', '456 Main St.'),
+            ('Person3', '789 Main St.'),
+            ('Person4', '1011 Main St.'),
+            ('Person5', '1213 Main St.'),
+            ('Person6', '1415 Main St.');
+
+            INSERT INTO donations(people_id, donation_date,  party)
+            VALUES
+            (1, '1980-01-01', 1),
+            (1, '1979-01-01', -1),
+            (2, '1980-01-01', 1),
+            (2, '1979-01-01', -1),
+            (3, '1980-01-01', 1),
+            (4, '1980-01-01', -1),
+            (5, '1980-01-01', -1),
+            (6, '1980-01-01', -1);
+      ===========================================================================
 And the changes to your html:
 
 1. On button, remove the onclick handler reference.
