@@ -1,0 +1,72 @@
+
+/* Csharp Age Counting
+In the C# file, write a program to perform a GET request on the route https://coderbyte.com/api/challenges/json/age-counting which contains a data key and the value is a string which contains items in the format: key=STRING, age=INTEGER. Your goal is to count how many items exist that have an age equal to or greater than 50, and print this final value.
+
+Example Input
+{"data":"key=IAfpK, age=58, key=WNVdi, age=64, key=jp9zt, age=47"}
+
+Example Output
+2
+Browse Resources
+Search for any help or documentation you might need for this problem. For example: array indexing, Ruby hash tables, etc.
+*/
+
+
+using System;
+using System.IO;
+using System.Net;
+using System.Linq;
+using System.Collections.Generic;
+
+
+class MainClass {
+
+  static Dictionary<string, int> CreateDict(string responseFromServer) {
+    //Brute force this response string into a dictionary.
+    //Only works if the dictionary is in a precise format.
+    int n = 8;
+    string responseStr = String.Concat(responseFromServer.Skip(n));
+
+    // remove last '"}' characters
+    int pos = responseStr.IndexOf("}");
+    if (pos > 0) {
+      responseStr = responseStr.Remove(pos-1, 2);
+    }
+    string[] subs = responseStr.Split(',');
+
+    Dictionary<string, int> respDict = new Dictionary<string, int>();
+    for (int i = 0; i < subs.Length; i+=2)
+    {
+        string key = String.Concat(subs[i].Skip(5));
+        string ageStr = String.Concat(subs[i+1].Skip(5));
+
+        int ageInt = Int32.Parse(ageStr);
+        respDict.Add(key, ageInt);
+    }
+    return respDict;
+  }
+
+  static void Main() {
+    int counter = 0;
+    WebRequest request = WebRequest.Create("https://coderbyte.com/api/challenges/json/age-counting");
+    WebResponse response = request.GetResponse();
+    Stream dataStream = response.GetResponseStream();
+    StreamReader reader = new StreamReader(dataStream);
+    string responseFromServer = reader.ReadToEnd();
+
+    //Had to write my homebrew function to convert the response string to a dictionary
+    //as I haven't written C# in a few years!
+    Dictionary<string, int> respDict = CreateDict(responseFromServer);
+
+    foreach ( var item in respDict)
+    {
+        if (item.Value >= 50)
+          counter++;
+    }
+    Console.WriteLine(counter);
+
+    reader.Close();
+    response.Close();
+  }
+
+}
