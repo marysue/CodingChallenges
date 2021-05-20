@@ -1,5 +1,4 @@
 import java.util.*; //Needed for Map and HashMap
-import java.lang.*; //Needed for StringBuilder class
 
 public class App {
     public static void main(String[] args) throws Exception {
